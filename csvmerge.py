@@ -43,7 +43,7 @@ def main():
         dat.append(pd.read_csv(os.path.normpath(f.strip()), sep=args.delimiter, encoding=args.encoding))
 
     # combine them by matching columns
-    pd.concat(dat).to_csv(args.output, sep=args.delimiter, encoding=args.encoding)
+    pd.concat(dat, sort=False).to_csv(args.output, sep=args.delimiter, encoding=args.encoding, index=False)
 
     print('Done.')
 
